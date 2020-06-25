@@ -29,15 +29,15 @@
             <el-input v-model="searchForm.parentId" placeholder="父级id"></el-input>
           </el-form-item>
           <el-form-item label="状态">
-            <!--<el-input v-model="searchForm.status" placeholder="状态"></el-input>-->
-            <el-select v-model="searchForm.status" clearable placeholder="请选择">
-              <el-option
-                v-for="item in statusOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+            <mySelect :model="searchForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler"></mySelect>
+            <!--<el-select v-model="searchForm.status" clearable placeholder="请选择">-->
+              <!--<el-option-->
+                <!--v-for="item in statusOptions"-->
+                <!--:key="item.value"-->
+                <!--:label="item.label"-->
+                <!--:value="item.value">-->
+              <!--</el-option>-->
+            <!--</el-select>-->
           </el-form-item>
 
           <!--<el-form-item label="排序">-->
@@ -230,9 +230,10 @@
 </template>
 
 <script>
-  import bus from '../common/bus';
-  import {formDatetime} from '../utils/formdata';
-  import {SysDictTable} from '../../api/tableJs/SysDictTable';
+  import bus from '../common/bus'
+  import {formDatetime} from '../utils/formdata'
+  import mySelect from '../common/MySelect'
+  import {SysDictTable} from '../../api/tableJs/SysDictTable'
   import SysDictAxios from '../../api/axios/SysDictAxios'
   import axios from '@/libs/http' // 导入http中创建的axios实例
   export default {
@@ -241,6 +242,7 @@
       return {
         tableData: SysDictTable.tableData,
         searchForm: SysDictTable.searchForm,
+        groupCode:'status',
         dialogFormVisible: false,
         dialogTitle:'',
         submitType:'',
@@ -261,7 +263,7 @@
       }
     },
     components: {
-
+      mySelect
     },
     computed: {
 
@@ -277,6 +279,10 @@
         if(this.$refs[formName]){
           this.resetForm(formName)
         }
+      },
+      // 获取子组件mySelect的值
+      changeSelectHandler(e){
+        this.searchForm.status = e;
       },
       searchSubmit() {
         let param = {}
