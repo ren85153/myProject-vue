@@ -23,6 +23,8 @@
 </template>
 
 <script>
+  import SysDictAxios from '../../api/axios/SysDictAxios'
+
   export default {
     data: function(){
       return {
@@ -39,6 +41,22 @@
           ]
         }
       }
+    },
+    created(){
+      // 初始请求获取字典
+      let dict = JSON.parse(localStorage.getItem('sysDict'))
+      let param = {}
+      if(!dict){
+        SysDictAxios.list(param).then(res => {
+          if (res.data.data.length > 0 ) {
+            localStorage.setItem('sysDict', JSON.stringify(res.data.data))
+          }
+        })
+          .catch((error)=>{
+            console.log(error);
+          })
+      }
+      // console.log(dict)
     },
     methods: {
       submitForm(formName) {

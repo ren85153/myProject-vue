@@ -12,7 +12,9 @@ import {Message, Loading } from 'element-ui';
 // import store from '@/store'     //引入 vuex 中的数据
 // import { getToken } from '@/utils/auth'   //引入拿到的权限tocken
 
-// create an axios instance   创建axios实例
+
+
+
 const service = axios.create({
   baseURL: process.env.BASE_API, // api 的 base_url
   timeout: 5000, // request timeout  设置请求超时时间
@@ -91,7 +93,8 @@ service.interceptors.request.use(
     // 在发送请求之前做什么
     if (config.method === 'get') {
       //  给data赋值以绕过if判断
-      config.data = qs.stringify(config.data);
+      // config.data = qs.stringify(config.data);
+
     }else if(config.method === "post") {
       // 序列化
       // config.data = qs.stringify(config.data);

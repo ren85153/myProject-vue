@@ -14,6 +14,8 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 // import './assets/css/icon.css';
 import "babel-polyfill";// Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而可以在现有环境执行。所以你可以用ES6编写，而不用考虑环境支持的问题。
 
+
+
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
@@ -37,5 +39,5 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
 })
