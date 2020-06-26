@@ -19,30 +19,30 @@
           <el-form-item label="操作时间">
             <el-input v-model="searchForm.createTime" placeholder="操作时间"></el-input>
           </el-form-item>
-          <el-form-item label="操作人">
-            <el-input v-model="searchForm.createId" placeholder="操作人"></el-input>
-          </el-form-item>
-          <el-form-item label="IP地址">
-            <el-input v-model="searchForm.ip" placeholder="IP地址"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展">
-            <el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展1">
-            <el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展2">
-            <el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展3">
-            <el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展4">
-            <el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展5">
-            <el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>
-          </el-form-item>
+          <!--<el-form-item label="操作人">-->
+            <!--<el-input v-model="searchForm.createId" placeholder="操作人"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="IP地址">-->
+            <!--<el-input v-model="searchForm.ip" placeholder="IP地址"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展">-->
+            <!--<el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展1">-->
+            <!--<el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展2">-->
+            <!--<el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展3">-->
+            <!--<el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展4">-->
+            <!--<el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展5">-->
+            <!--<el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>-->
+          <!--</el-form-item>-->
           <el-form-item>
             <el-button type="primary" @click="searchSubmit">查询</el-button>
           </el-form-item>
@@ -105,50 +105,50 @@
         </el-pagination>
       </div>
       <!-- 新增,编辑表单 -->
-      <div>
-        <el-dialog :title =dialogTitle :visible.sync="dialogFormVisible" :submitType= submitType :before-close="handleClose">
-          <el-form :inline="true" :model="createForm" :rules="rules" ref="createForm" class="demo-form-inline" label-width="150px">
-	          <el-form-item label="操作类型" prop="operType">
-	            <el-input v-model="createForm.operType" placeholder="操作类型"></el-input>
-	          </el-form-item>
-	          <el-form-item label="操作内容" prop="operContent">
-	            <el-input v-model="createForm.operContent" placeholder="操作内容"></el-input>
-	          </el-form-item>
-	          <el-form-item label="操作时间" prop="createTime">
-	            <el-input v-model="createForm.createTime" placeholder="操作时间"></el-input>
-	          </el-form-item>
-	          <el-form-item label="操作人" prop="createId">
-	            <el-input v-model="createForm.createId" placeholder="操作人"></el-input>
-	          </el-form-item>
-	          <el-form-item label="IP地址" prop="ip">
-	            <el-input v-model="createForm.ip" placeholder="IP地址"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展" prop="reserve">
-	            <el-input v-model="createForm.reserve" placeholder="扩展"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展1" prop="reserve1">
-	            <el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展2" prop="reserve2">
-	            <el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展3" prop="reserve3">
-	            <el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展4" prop="reserve4">
-	            <el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展5" prop="reserve5">
-	            <el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>
-	          </el-form-item>
-          </el-form>
-          <div slot="footer" class="dialog-footer">
-            <!--<el-button @click="dialogFormVisible = false">取 消</el-button>-->
-            <el-button @click="resetForm('createForm')">重 置</el-button>
-            <el-button type="primary"  @click="submitForm('createForm',submitType)">确 定</el-button>
-          </div>
-        </el-dialog>
-      </div>
+      <!--<div>-->
+        <!--<el-dialog :title =dialogTitle :visible.sync="dialogFormVisible" :submitType= submitType :before-close="handleClose">-->
+          <!--<el-form :inline="true" :model="createForm" :rules="rules" ref="createForm" class="demo-form-inline" label-width="150px">-->
+	          <!--<el-form-item label="操作类型" prop="operType">-->
+	            <!--<el-input v-model="createForm.operType" placeholder="操作类型"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="操作内容" prop="operContent">-->
+	            <!--<el-input v-model="createForm.operContent" placeholder="操作内容"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="操作时间" prop="createTime">-->
+	            <!--<el-input v-model="createForm.createTime" placeholder="操作时间"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="操作人" prop="createId">-->
+	            <!--<el-input v-model="createForm.createId" placeholder="操作人"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="IP地址" prop="ip">-->
+	            <!--<el-input v-model="createForm.ip" placeholder="IP地址"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展" prop="reserve">-->
+	            <!--<el-input v-model="createForm.reserve" placeholder="扩展"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展1" prop="reserve1">-->
+	            <!--<el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展2" prop="reserve2">-->
+	            <!--<el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展3" prop="reserve3">-->
+	            <!--<el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展4" prop="reserve4">-->
+	            <!--<el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展5" prop="reserve5">-->
+	            <!--<el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>-->
+	          <!--</el-form-item>-->
+          <!--</el-form>-->
+          <!--<div slot="footer" class="dialog-footer">-->
+            <!--&lt;!&ndash;<el-button @click="dialogFormVisible = false">取 消</el-button>&ndash;&gt;-->
+            <!--<el-button @click="resetForm('createForm')">重 置</el-button>-->
+            <!--<el-button type="primary"  @click="submitForm('createForm',submitType)">确 定</el-button>-->
+          <!--</div>-->
+        <!--</el-dialog>-->
+      <!--</div>-->
     </div>
   </div>
 </template>
@@ -206,7 +206,7 @@
       handleSizeChange(val) {
         // console.log(`每页 ${val} 条`);
         let param = {}
-        param.condition = this.searchForm
+        param.t = this.searchForm
         param.current = this.currentPage
         param.size = this.val
         this.getListByPageParam(param);
@@ -237,7 +237,7 @@
       },
       reflushTable(){
         let param = {}
-        param.sysUser = this.searchForm
+        param.t = this.searchForm
         param.current = this.currentPage
         param.size = this.pagesize
         this.getListByPageParam(param);

@@ -13,11 +13,11 @@ SysRoleTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "角色类型",
-	  	prop: "roleType",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "角色类型",
+	  // 	prop: "roleType",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "角色编码",
@@ -31,23 +31,23 @@ SysRoleTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "创建时间",
-	  	prop: "createTime",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "创建人id",
-	  	prop: "createId",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "创建人姓名",
-	  	prop: "createName",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "创建时间",
+	  // 	prop: "createTime",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "创建人id",
+	  // 	prop: "createId",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "创建人姓名",
+	  // 	prop: "createName",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "修改时间",
@@ -55,11 +55,11 @@ SysRoleTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "修改人id",
-	  	prop: "updateId",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "修改人id",
+	  // 	prop: "updateId",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "修改人姓名",
@@ -67,47 +67,47 @@ SysRoleTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "备注",
-	  	prop: "remark",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展",
-	  	prop: "reserve",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展1",
-	  	prop: "reserve1",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展2",
-	  	prop: "reserve2",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展3",
-	  	prop: "reserve3",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展4",
-	  	prop: "reserve4",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展5",
-	  	prop: "reserve5",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "备注",
+	  // 	prop: "remark",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展",
+	  // 	prop: "reserve",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展1",
+	  // 	prop: "reserve1",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展2",
+	  // 	prop: "reserve2",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展3",
+	  // 	prop: "reserve3",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展4",
+	  // 	prop: "reserve4",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展5",
+	  // 	prop: "reserve5",
+	  // 	operate: false,
+	  // },
 
 ]
 

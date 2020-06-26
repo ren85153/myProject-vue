@@ -23,13 +23,16 @@ SysLogsTable.column  = [
 	  	label: "操作时间",
 	  	prop: "createTime",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return formDatetime(row, column, )
+      }
 	  },
 
-	  {
-	  	label: "操作人",
-	  	prop: "createId",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "操作人",
+	  // 	prop: "createId",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "IP地址",
@@ -37,41 +40,41 @@ SysLogsTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "扩展",
-	  	prop: "reserve",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展1",
-	  	prop: "reserve1",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展2",
-	  	prop: "reserve2",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展3",
-	  	prop: "reserve3",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展4",
-	  	prop: "reserve4",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展5",
-	  	prop: "reserve5",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "扩展",
+	  // 	prop: "reserve",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展1",
+	  // 	prop: "reserve1",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展2",
+	  // 	prop: "reserve2",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展3",
+	  // 	prop: "reserve3",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展4",
+	  // 	prop: "reserve4",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展5",
+	  // 	prop: "reserve5",
+	  // 	operate: false,
+	  // },
 
 ]
 

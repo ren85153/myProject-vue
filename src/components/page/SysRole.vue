@@ -13,54 +13,54 @@
           <el-form-item label="角色名称">
             <el-input v-model="searchForm.roleName" placeholder="角色名称"></el-input>
           </el-form-item>
-          <el-form-item label="角色类型">
-            <el-input v-model="searchForm.roleType" placeholder="角色类型"></el-input>
-          </el-form-item>
+          <!--<el-form-item label="角色类型">-->
+            <!--<el-input v-model="searchForm.roleType" placeholder="角色类型"></el-input>-->
+          <!--</el-form-item>-->
           <el-form-item label="角色编码">
             <el-input v-model="searchForm.roleCode" placeholder="角色编码"></el-input>
           </el-form-item>
           <el-form-item label="状态">
             <el-input v-model="searchForm.status" placeholder="状态"></el-input>
           </el-form-item>
-          <el-form-item label="创建时间">
-            <el-input v-model="searchForm.createTime" placeholder="创建时间"></el-input>
-          </el-form-item>
-          <el-form-item label="创建人id">
-            <el-input v-model="searchForm.createId" placeholder="创建人id"></el-input>
-          </el-form-item>
-          <el-form-item label="创建人姓名">
-            <el-input v-model="searchForm.createName" placeholder="创建人姓名"></el-input>
-          </el-form-item>
+          <!--<el-form-item label="创建时间">-->
+            <!--<el-input v-model="searchForm.createTime" placeholder="创建时间"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="创建人id">-->
+            <!--<el-input v-model="searchForm.createId" placeholder="创建人id"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="创建人姓名">-->
+            <!--<el-input v-model="searchForm.createName" placeholder="创建人姓名"></el-input>-->
+          <!--</el-form-item>-->
           <el-form-item label="修改时间">
             <el-input v-model="searchForm.updateTime" placeholder="修改时间"></el-input>
           </el-form-item>
-          <el-form-item label="修改人id">
-            <el-input v-model="searchForm.updateId" placeholder="修改人id"></el-input>
-          </el-form-item>
+          <!--<el-form-item label="修改人id">-->
+            <!--<el-input v-model="searchForm.updateId" placeholder="修改人id"></el-input>-->
+          <!--</el-form-item>-->
           <el-form-item label="修改人姓名">
             <el-input v-model="searchForm.updateName" placeholder="修改人姓名"></el-input>
           </el-form-item>
-          <el-form-item label="备注">
-            <el-input v-model="searchForm.remark" placeholder="备注"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展">
-            <el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展1">
-            <el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展2">
-            <el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展3">
-            <el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展4">
-            <el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>
-          </el-form-item>
-          <el-form-item label="扩展5">
-            <el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>
-          </el-form-item>
+          <!--<el-form-item label="备注">-->
+            <!--<el-input v-model="searchForm.remark" placeholder="备注"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展">-->
+            <!--<el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展1">-->
+            <!--<el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展2">-->
+            <!--<el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展3">-->
+            <!--<el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展4">-->
+            <!--<el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>-->
+          <!--</el-form-item>-->
+          <!--<el-form-item label="扩展5">-->
+            <!--<el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>-->
+          <!--</el-form-item>-->
           <el-form-item>
             <el-button type="primary" @click="searchSubmit">查询</el-button>
           </el-form-item>
@@ -129,54 +129,54 @@
 	          <el-form-item label="角色名称" prop="roleName">
 	            <el-input v-model="createForm.roleName" placeholder="角色名称"></el-input>
 	          </el-form-item>
-	          <el-form-item label="角色类型" prop="roleType">
-	            <el-input v-model="createForm.roleType" placeholder="角色类型"></el-input>
-	          </el-form-item>
+	          <!--<el-form-item label="角色类型" prop="roleType">-->
+	            <!--<el-input v-model="createForm.roleType" placeholder="角色类型"></el-input>-->
+	          <!--</el-form-item>-->
 	          <el-form-item label="角色编码" prop="roleCode">
 	            <el-input v-model="createForm.roleCode" placeholder="角色编码"></el-input>
 	          </el-form-item>
 	          <el-form-item label="状态" prop="status">
 	            <el-input v-model="createForm.status" placeholder="状态"></el-input>
 	          </el-form-item>
-	          <el-form-item label="创建时间" prop="createTime">
-	            <el-input v-model="createForm.createTime" placeholder="创建时间"></el-input>
-	          </el-form-item>
-	          <el-form-item label="创建人id" prop="createId">
-	            <el-input v-model="createForm.createId" placeholder="创建人id"></el-input>
-	          </el-form-item>
-	          <el-form-item label="创建人姓名" prop="createName">
-	            <el-input v-model="createForm.createName" placeholder="创建人姓名"></el-input>
-	          </el-form-item>
-	          <el-form-item label="修改时间" prop="updateTime">
-	            <el-input v-model="createForm.updateTime" placeholder="修改时间"></el-input>
-	          </el-form-item>
-	          <el-form-item label="修改人id" prop="updateId">
-	            <el-input v-model="createForm.updateId" placeholder="修改人id"></el-input>
-	          </el-form-item>
-	          <el-form-item label="修改人姓名" prop="updateName">
-	            <el-input v-model="createForm.updateName" placeholder="修改人姓名"></el-input>
-	          </el-form-item>
+	          <!--<el-form-item label="创建时间" prop="createTime">-->
+	            <!--<el-input v-model="createForm.createTime" placeholder="创建时间"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="创建人id" prop="createId">-->
+	            <!--<el-input v-model="createForm.createId" placeholder="创建人id"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="创建人姓名" prop="createName">-->
+	            <!--<el-input v-model="createForm.createName" placeholder="创建人姓名"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="修改时间" prop="updateTime">-->
+	            <!--<el-input v-model="createForm.updateTime" placeholder="修改时间"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="修改人id" prop="updateId">-->
+	            <!--<el-input v-model="createForm.updateId" placeholder="修改人id"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="修改人姓名" prop="updateName">-->
+	            <!--<el-input v-model="createForm.updateName" placeholder="修改人姓名"></el-input>-->
+	          <!--</el-form-item>-->
 	          <el-form-item label="备注" prop="remark">
 	            <el-input v-model="createForm.remark" placeholder="备注"></el-input>
 	          </el-form-item>
-	          <el-form-item label="扩展" prop="reserve">
-	            <el-input v-model="createForm.reserve" placeholder="扩展"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展1" prop="reserve1">
-	            <el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展2" prop="reserve2">
-	            <el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展3" prop="reserve3">
-	            <el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展4" prop="reserve4">
-	            <el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>
-	          </el-form-item>
-	          <el-form-item label="扩展5" prop="reserve5">
-	            <el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>
-	          </el-form-item>
+	          <!--<el-form-item label="扩展" prop="reserve">-->
+	            <!--<el-input v-model="createForm.reserve" placeholder="扩展"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展1" prop="reserve1">-->
+	            <!--<el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展2" prop="reserve2">-->
+	            <!--<el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展3" prop="reserve3">-->
+	            <!--<el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展4" prop="reserve4">-->
+	            <!--<el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>-->
+	          <!--</el-form-item>-->
+	          <!--<el-form-item label="扩展5" prop="reserve5">-->
+	            <!--<el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>-->
+	          <!--</el-form-item>-->
           </el-form>
           <div slot="footer" class="dialog-footer">
             <!--<el-button @click="dialogFormVisible = false">取 消</el-button>-->

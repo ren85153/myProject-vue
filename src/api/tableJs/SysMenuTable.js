@@ -1,5 +1,6 @@
 
 import {formDatetime} from '../../components/utils/formdata';
+import {getDictName} from "../../components/common/dictUtils";
 
 // SysMenu表格column
 var SysMenuTable = {}
@@ -53,37 +54,43 @@ SysMenuTable.column  = [
 	  	label: "状态",
 	  	prop: "status",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return getDictName(column.property, cellValue)
+      }
 	  },
 
-	  {
-	  	label: "创建时间",
-	  	prop: "createTime",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "创建人id",
-	  	prop: "createId",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "创建人姓名",
-	  	prop: "createName",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "创建时间",
+	  // 	prop: "createTime",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "创建人id",
+	  // 	prop: "createId",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "创建人姓名",
+	  // 	prop: "createName",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "修改时间",
 	  	prop: "updateTime",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return formDatetime(row, column, )
+      }
 	  },
 
-	  {
-	  	label: "修改人id",
-	  	prop: "updateId",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "修改人id",
+	  // 	prop: "updateId",
+	  // 	operate: false,
+	  // },
 
 	  {
 	  	label: "修改人姓名",
@@ -91,47 +98,47 @@ SysMenuTable.column  = [
 	  	operate: false,
 	  },
 
-	  {
-	  	label: "备注",
-	  	prop: "remark",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展",
-	  	prop: "reserve",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展1",
-	  	prop: "reserve1",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展2",
-	  	prop: "reserve2",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展3",
-	  	prop: "reserve3",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展4",
-	  	prop: "reserve4",
-	  	operate: false,
-	  },
-
-	  {
-	  	label: "扩展5",
-	  	prop: "reserve5",
-	  	operate: false,
-	  },
+	  // {
+	  // 	label: "备注",
+	  // 	prop: "remark",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展",
+	  // 	prop: "reserve",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展1",
+	  // 	prop: "reserve1",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展2",
+	  // 	prop: "reserve2",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展3",
+	  // 	prop: "reserve3",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展4",
+	  // 	prop: "reserve4",
+	  // 	operate: false,
+	  // },
+    //
+	  // {
+	  // 	label: "扩展5",
+	  // 	prop: "reserve5",
+	  // 	operate: false,
+	  // },
 
 ]
 

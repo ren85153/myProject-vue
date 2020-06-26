@@ -59,7 +59,7 @@
           this.statusOptions = []
           return
         }
-        console.log(param)
+        // console.log(param)
         SysDictAxios.list(param).then(res => {
           // debugger
           if (res.data.data.length > 0 ) {

@@ -449,12 +449,11 @@
       // 编辑
       handleEdit(index,row){
         this.submitType = 'edit'
-        this.$refs['createForm'].resetFields();
         // console.log(row.id)
         SysUserAxios.get(row.id).then(res => {
           if (res.data.code != '-1') {
-            this.createForm = res.data.data
             this.dialogFormVisible = true
+            this.createForm = res.data.data
           }else{
             this.tableData = []
           }

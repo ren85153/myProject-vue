@@ -140,7 +140,7 @@ service.interceptors.response.use(
   error => {
     // debugger
     Loading.service().close();
-    console.log(error)
+    // console.log(error)
     if (error.response) {
       switch (error.response.status) {
         // 401: 未登录
