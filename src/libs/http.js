@@ -17,7 +17,7 @@ import {Message, Loading } from 'element-ui';
 
 const service = axios.create({
   baseURL: process.env.BASE_API, // api 的 base_url
-  timeout: 5000, // request timeout  设置请求超时时间
+  timeout: 10 * 1000 , // request timeout  设置请求超时时间
   responseType: "json",
   withCredentials : true, // 是否允许带cookie这些
 
@@ -141,7 +141,7 @@ service.interceptors.response.use(
     // debugger
     Loading.service().close();
     console.log(error)
-    if (error.response.status) {
+    if (error.response) {
       switch (error.response.status) {
         // 401: 未登录
         // 未登录则跳转登录页面，并携带当前页面的路径

@@ -30,14 +30,6 @@
           </el-form-item>
           <el-form-item label="状态">
             <mySelect :model="searchForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler"></mySelect>
-            <!--<el-select v-model="searchForm.status" clearable placeholder="请选择">-->
-              <!--<el-option-->
-                <!--v-for="item in statusOptions"-->
-                <!--:key="item.value"-->
-                <!--:label="item.label"-->
-                <!--:value="item.value">-->
-              <!--</el-option>-->
-            <!--</el-select>-->
           </el-form-item>
 
           <!--<el-form-item label="排序">-->
@@ -166,14 +158,7 @@
 	            <el-input v-model="createForm.parentId" placeholder="父级id"></el-input>
 	          </el-form-item>
             <el-form-item label="状态" prop="status" v-if = "this.submitType === 'edit'">
-              <el-select v-model="createForm.status" clearable placeholder="请选择">
-                <el-option
-                  v-for="item in statusOptions"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-              </el-select>
+              <mySelect :model="createForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler2"></mySelect>
             </el-form-item>
 	          <el-form-item label="排序" prop="dictOrder">
 	            <el-input v-model="createForm.dictOrder" placeholder="排序"></el-input>
@@ -284,6 +269,9 @@
       changeSelectHandler(e){
         this.searchForm.status = e;
       },
+      changeSelectHandler2(e){
+        this.createForm.status = e;
+      },
       searchSubmit() {
         let param = {}
         param.t = this.searchForm
@@ -295,7 +283,7 @@
       handleSizeChange(val) {
         // console.log(`每页 ${val} 条`);
         let param = {}
-        param.condition = this.searchForm
+        param.t = this.searchForm
         param.current = this.currentPage
         param.size = val
         this.getListByPageParam(param);
@@ -303,12 +291,13 @@
       handleCurrentChange(val) {
         // console.log(`当前页: ${val}`);
         let param = {}
-        param.condition = this.searchForm
+        param.t = this.searchForm
         param.current = val
         param.size = this.pagesize
         this.getListByPageParam(param);
       },
       getListByPageParam(param){
+        console.log(param);
         SysDictAxios.page(param).then(res => {
           // console.log(res.data);
           if (res.data.code != '-1') {
