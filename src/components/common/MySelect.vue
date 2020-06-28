@@ -35,6 +35,12 @@
           required: false
         },
       },
+      watch: {
+        model:function(newVal,oldVal){
+          // this.selectValue = newVal
+          // console.log('newVal='+newVal+','+'oldVa='+oldVal);
+        }
+      },
       data() {
         return {
           selectValue: this.model,
@@ -76,11 +82,11 @@
                 option.label = selectDict[i].dictName
                 option.value = selectDict[i].dictCode
                 arr.push(option)
-                this.statusOptions.push(option)
+                // this.statusOptions.push(option)
               }
             }
             // this.statusOptions = arr
-            // this.statusOptions = JSON.parse(JSON.stringify(arr))
+            this.statusOptions = JSON.parse(JSON.stringify(arr))
           }else{
             this.statusOptions = []
           }
@@ -90,8 +96,8 @@
         getOptions(){
 
         },
-        changeSelectHandler(val){
-          // console.log('changeHandler' + val)
+        changeSelectHandler(){
+          // console.log('changeHandler' + this.selectValue)
           this.$emit('changeSelectHandler',this.selectValue)
         }
       }

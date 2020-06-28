@@ -42,11 +42,11 @@
           <!--</el-form-item>-->
           <el-form-item label="性别">
             <!--<el-input v-model="searchForm.sex" placeholder="性别"></el-input>-->
-            <mySelect :model="createForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler"></mySelect>
+            <mySelect :model="searchForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectSexHandler('searchForm',$event)"></mySelect>
           </el-form-item>
           <el-form-item label="状态">
             <!--<el-input v-model="searchForm.status" placeholder="状态"></el-input>-->
-            <mySelect :model="createForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler2"></mySelect>
+            <mySelect :model="searchForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('searchForm',$event)"></mySelect>
           </el-form-item>
           <!--<el-form-item label="登录错误次数">-->
             <!--<el-input v-model="searchForm.errorCount" placeholder="登录错误次数"></el-input>-->
@@ -196,11 +196,11 @@
 	          <!--</el-form-item>-->
 	          <el-form-item label="性别" prop="sex">
 	            <!--<el-input v-model="createForm.sex" placeholder="性别"></el-input>-->
-              <mySelect :model="createForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler2"></mySelect>
+              <mySelect :model="createForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectSexHandler('createForm',$event)"></mySelect>
             </el-form-item>
 	          <el-form-item label="状态" prop="status" v-if="submitType ==='edit'">
 	            <!--<el-input v-model="createForm.status" placeholder="状态"></el-input>-->
-              <mySelect :model="createForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler2"></mySelect>
+              <mySelect :model="createForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('createForm',$event)"></mySelect>
             </el-form-item>
 	          <!--<el-form-item label="登录错误次数" prop="errorCount">-->
 	            <!--<el-input v-model="createForm.errorCount" placeholder="登录错误次数"></el-input>-->
@@ -306,16 +306,18 @@
       handleCreated(formName){
         this.dialogFormVisible = true
         this.submitType = 'add'
-        if(this.$refs[formName]){
-          this.resetForm(formName)
-        }
+        this.createForm = this.clearForm(this.createForm);
+        // console.log(this.createForm)
+        // this.resetForm('createForm')
       },
       // 获取子组件mySelect的值
-      changeSelectHandler(e){
-        this.searchForm.status = e;
+      changeSelectSexHandler(formName,e){
+        console.log(formName)
+        console.log(e)
+        this.$refs[formName].sex = e
       },
-      changeSelectHandler2(e){
-        this.createForm.status = e;
+      changeSelectStatusHandler(formName,e){
+        this.$refs[formName].status = e
       },
       searchSubmit() {
         let param = {}
@@ -434,7 +436,22 @@
         
       },
       resetForm(formName) {
-        this.$refs[formName].resetFields();
+        if(this.$refs[formName]){
+          this.$refs[formName].resetFields();
+        }
+      },
+      // 清空对象属性值
+      clearForm(datas){
+        let v_data ={};
+        for(let key in datas){
+          // console.log(key)
+          if (datas[key] != null && datas[key] instanceof Array) {
+            v_data[key]=[];
+          }else {
+            v_data[key] = '';
+          }
+        }
+        return v_data
       },
       handleSelectionChange()  {  },
       handtable()  {  },
@@ -449,6 +466,8 @@
       // 编辑
       handleEdit(index,row){
         this.submitType = 'edit'
+        // this.createForm = this.clearForm(this.createForm);
+        // console.log(this.createForm.sex)
         // console.log(row.id)
         SysUserAxios.get(row.id).then(res => {
           if (res.data.code != '-1') {

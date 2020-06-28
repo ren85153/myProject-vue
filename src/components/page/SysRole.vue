@@ -225,6 +225,7 @@
     },
     methods: {
       handleCreated(formName){
+        debugger
         this.dialogFormVisible = true
         this.submitType = 'add'
         if(this.$refs[formName]){
