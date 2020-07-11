@@ -1,5 +1,6 @@
 
 import {formDatetime} from '../../components/utils/formdata';
+import {getDictName} from "../../components/common/dictUtils";
 
 // SysRole表格column
 var SysRoleTable = {}
@@ -29,6 +30,9 @@ SysRoleTable.column  = [
 	  	label: "状态",
 	  	prop: "status",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return getDictName(column.property, cellValue)
+      }
 	  },
 
 	  // {
@@ -53,6 +57,9 @@ SysRoleTable.column  = [
 	  	label: "修改时间",
 	  	prop: "updateTime",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return formDatetime(row, column, )
+      }
 	  },
 
 	  // {

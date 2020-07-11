@@ -9,71 +9,22 @@
     <div class="container">
       <!-- 查询表单 -->
       <div>
-        <el-form :inline="true" :model="searchForm" class="demo-form-inline">
+        <el-form ref="searchForm" :inline="true" :model="searchForm" class="demo-form-inline">
           <el-form-item label="字典名称">
             <el-input v-model="searchForm.dictName" placeholder="字典名称"></el-input>
           </el-form-item>
           <el-form-item label="字典编码">
             <el-input v-model="searchForm.dictCode" placeholder="字典编码"></el-input>
           </el-form-item>
-          <!--<el-form-item label="字典类型">-->
-            <!--<el-input v-model="searchForm.dictType" placeholder="字典类型"></el-input>-->
-          <!--</el-form-item>-->
           <el-form-item label="组名">
             <el-input v-model="searchForm.groupName" placeholder="组名"></el-input>
           </el-form-item>
           <el-form-item label="组编码">
             <el-input v-model="searchForm.groupCode" placeholder="组编码"></el-input>
           </el-form-item>
-          <el-form-item label="父级id">
-            <el-input v-model="searchForm.parentId" placeholder="父级id"></el-input>
-          </el-form-item>
           <el-form-item label="状态">
-            <mySelect :model="searchForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler"></mySelect>
+            <mySelect :model="searchForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('searchForm',$event)"></mySelect>
           </el-form-item>
-
-          <!--<el-form-item label="排序">-->
-            <!--<el-input v-model="searchForm.dictOrder" placeholder="排序"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="备注">-->
-            <!--<el-input v-model="searchForm.remark" placeholder="备注"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建时间">-->
-            <!--<el-input v-model="searchForm.createTime" placeholder="创建时间"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建人id">-->
-            <!--<el-input v-model="searchForm.createId" placeholder="创建人id"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建人姓名">-->
-            <!--<el-input v-model="searchForm.createName" placeholder="创建人姓名"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改时间">-->
-            <!--<el-input v-model="searchForm.updateTime" placeholder="修改时间"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改人id">-->
-            <!--<el-input v-model="searchForm.updateId" placeholder="修改人id"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改人姓名">-->
-            <!--<el-input v-model="searchForm.updateName" placeholder="修改人姓名"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展">-->
-            <!--<el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展1">-->
-            <!--<el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展2">-->
-            <!--<el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展3">-->
-            <!--<el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展4">-->
-            <!--<el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展5">-->
-            <!--<el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>-->
-          <!--</el-form-item>-->
           <el-form-item>
             <el-button type="primary" @click="searchSubmit">查询</el-button>
           </el-form-item>
@@ -145,9 +96,6 @@
 	          <el-form-item label="字典编码" prop="dictCode">
 	            <el-input v-model="createForm.dictCode" placeholder="字典编码"></el-input>
 	          </el-form-item>
-	          <!--<el-form-item label="字典类型" prop="dictType">-->
-	            <!--<el-input v-model="createForm.dictType" placeholder="字典类型"></el-input>-->
-	          <!--</el-form-item>-->
 	          <el-form-item label="组名" prop="groupName">
 	            <el-input v-model="createForm.groupName" placeholder="组名"></el-input>
 	          </el-form-item>
@@ -158,7 +106,7 @@
 	            <el-input v-model="createForm.parentId" placeholder="父级id"></el-input>
 	          </el-form-item>
             <el-form-item label="状态" prop="status" v-if = "this.submitType === 'edit'">
-              <mySelect :model="createForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectHandler2"></mySelect>
+              <mySelect :model="createForm.status" :groupCode="groupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('createForm',$event)"></mySelect>
             </el-form-item>
 	          <el-form-item label="排序" prop="dictOrder">
 	            <el-input v-model="createForm.dictOrder" placeholder="排序"></el-input>
@@ -166,42 +114,6 @@
 	          <el-form-item label="备注" prop="remark">
 	            <el-input v-model="createForm.remark" placeholder="备注"></el-input>
 	          </el-form-item>
-	          <!--<el-form-item label="创建时间" prop="createTime">-->
-	            <!--<el-input v-model="createForm.createTime" placeholder="创建时间"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="创建人id" prop="createId">-->
-	            <!--<el-input v-model="createForm.createId" placeholder="创建人id"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="创建人姓名" prop="createName">-->
-	            <!--<el-input v-model="createForm.createName" placeholder="创建人姓名"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改时间" prop="updateTime">-->
-	            <!--<el-input v-model="createForm.updateTime" placeholder="修改时间"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改人id" prop="updateId">-->
-	            <!--<el-input v-model="createForm.updateId" placeholder="修改人id"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改人姓名" prop="updateName">-->
-	            <!--<el-input v-model="createForm.updateName" placeholder="修改人姓名"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展" prop="reserve">-->
-	            <!--<el-input v-model="createForm.reserve" placeholder="扩展"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展1" prop="reserve1">-->
-	            <!--<el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展2" prop="reserve2">-->
-	            <!--<el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展3" prop="reserve3">-->
-	            <!--<el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展4" prop="reserve4">-->
-	            <!--<el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展5" prop="reserve5">-->
-	            <!--<el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>-->
-	          <!--</el-form-item>-->
           </el-form>
           <div slot="footer" class="dialog-footer">
             <!--<el-button @click="dialogFormVisible = false">取 消</el-button>-->
@@ -238,13 +150,6 @@
         total:100,//默认数据总数
         pagesize:5,//每页的数据条数
         currentPage:1,//默认开始页面
-        statusOptions: [{
-          value: '0',
-          label: '可用'
-        }, {
-          value: '1',
-          label: '不可用'
-        }],
       }
     },
     components: {
@@ -261,16 +166,12 @@
       handleCreated(formName){
         this.dialogFormVisible = true
         this.submitType = 'add'
-        if(this.$refs[formName]){
-          this.resetForm(formName)
-        }
+        this.createForm = this.clearForm(this.createForm);
       },
       // 获取子组件mySelect的值
-      changeSelectHandler(e){
-        this.searchForm.status = e;
-      },
-      changeSelectHandler2(e){
-        this.createForm.status = e;
+      changeSelectStatusHandler(formName,e){
+        console.log(this.$refs[formName])
+        this.$refs[formName].model.status = e
       },
       searchSubmit() {
         let param = {}
@@ -297,7 +198,7 @@
         this.getListByPageParam(param);
       },
       getListByPageParam(param){
-        console.log(param);
+        // console.log(param);
         SysDictAxios.page(param).then(res => {
           // console.log(res.data);
           if (res.data.code != '-1') {
@@ -392,6 +293,19 @@
       resetForm(formName) {
         this.$refs[formName].resetFields();
       },
+      // 清空对象属性值
+      clearForm(datas){
+        let v_data ={};
+        for(let key in datas){
+          // console.log(key)
+          if (datas[key] != null && datas[key] instanceof Array) {
+            v_data[key]=[];
+          }else {
+            v_data[key] = '';
+          }
+        }
+        return v_data
+      },
       handleSelectionChange()  {  },
       handtable()  {  },
       // 鼠标置新增对话框外
@@ -409,6 +323,7 @@
         SysDictAxios.get(row.id).then(res => {
           if (res.data.code != '-1') {
             this.dialogFormVisible = true
+            console.log(res.data.data)
             this.createForm = res.data.data
           }else{
             this.tableData = []

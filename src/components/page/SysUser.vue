@@ -13,33 +13,12 @@
           <el-form-item label="姓名">
             <el-input v-model="searchForm.userName" placeholder="姓名"></el-input>
           </el-form-item>
-          <!--<el-form-item label="账号">-->
-            <!--<el-input v-model="searchForm.account" placeholder="账号"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="密码">-->
-            <!--<el-input v-model="searchForm.password" placeholder="密码"></el-input>-->
-          <!--</el-form-item>-->
           <el-form-item label="邮箱">
             <el-input v-model="searchForm.email" placeholder="邮箱"></el-input>
           </el-form-item>
           <el-form-item label="手机号">
             <el-input v-model="searchForm.telephone" placeholder="手机号"></el-input>
           </el-form-item>
-          <!--<el-form-item label="地址">-->
-            <!--<el-input v-model="searchForm.address" placeholder="地址"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="证件类型">-->
-            <!--<el-input v-model="searchForm.cartType" placeholder="证件类型"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="证件号码">-->
-            <!--<el-input v-model="searchForm.cartNo" placeholder="证件号码"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="国籍">-->
-            <!--<el-input v-model="searchForm.nationality" placeholder="国籍"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="生日">-->
-            <!--<el-input v-model="searchForm.birth" placeholder="生日"></el-input>-->
-          <!--</el-form-item>-->
           <el-form-item label="性别">
             <!--<el-input v-model="searchForm.sex" placeholder="性别"></el-input>-->
             <mySelect :model="searchForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectSexHandler('searchForm',$event)"></mySelect>
@@ -48,57 +27,6 @@
             <!--<el-input v-model="searchForm.status" placeholder="状态"></el-input>-->
             <mySelect :model="searchForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('searchForm',$event)"></mySelect>
           </el-form-item>
-          <!--<el-form-item label="登录错误次数">-->
-            <!--<el-input v-model="searchForm.errorCount" placeholder="登录错误次数"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="登录IP">-->
-            <!--<el-input v-model="searchForm.loginIp" placeholder="登录IP"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="登录mac地址">-->
-            <!--<el-input v-model="searchForm.loginMac" placeholder="登录mac地址"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建时间">-->
-            <!--<el-input v-model="searchForm.createTime" placeholder="创建时间"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建人id">-->
-            <!--<el-input v-model="searchForm.createId" placeholder="创建人id"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="创建人姓名">-->
-            <!--<el-input v-model="searchForm.createName" placeholder="创建人姓名"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改时间">-->
-            <!--<el-input v-model="searchForm.updateTime" placeholder="修改时间"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改人id">-->
-            <!--<el-input v-model="searchForm.updateId" placeholder="修改人id"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="修改人姓名">-->
-            <!--<el-input v-model="searchForm.updateName" placeholder="修改人姓名"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="账号类型">-->
-            <!--<el-input v-model="searchForm.accountType" placeholder="账号类型"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="备注">-->
-            <!--<el-input v-model="searchForm.remark" placeholder="备注"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展">-->
-            <!--<el-input v-model="searchForm.reserve" placeholder="扩展"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展1">-->
-            <!--<el-input v-model="searchForm.reserve1" placeholder="扩展1"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展2">-->
-            <!--<el-input v-model="searchForm.reserve2" placeholder="扩展2"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展3">-->
-            <!--<el-input v-model="searchForm.reserve3" placeholder="扩展3"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展4">-->
-            <!--<el-input v-model="searchForm.reserve4" placeholder="扩展4"></el-input>-->
-          <!--</el-form-item>-->
-          <!--<el-form-item label="扩展5">-->
-            <!--<el-input v-model="searchForm.reserve5" placeholder="扩展5"></el-input>-->
-          <!--</el-form-item>-->
           <el-form-item>
             <el-button type="primary" @click="searchSubmit">查询</el-button>
           </el-form-item>
@@ -167,12 +95,6 @@
 	          <el-form-item label="姓名" prop="userName">
 	            <el-input v-model="createForm.userName" placeholder="姓名"></el-input>
 	          </el-form-item>
-	          <!--<el-form-item label="账号" prop="account">-->
-	            <!--<el-input v-model="createForm.account" placeholder="账号"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="密码" prop="password">-->
-	            <!--<el-input v-model="createForm.password" placeholder="密码"></el-input>-->
-	          <!--</el-form-item>-->
 	          <el-form-item label="邮箱" prop="email">
 	            <el-input v-model="createForm.email" placeholder="邮箱"></el-input>
 	          </el-form-item>
@@ -182,18 +104,6 @@
 	          <el-form-item label="地址" prop="address">
 	            <el-input v-model="createForm.address" placeholder="地址"></el-input>
 	          </el-form-item>
-	          <!--<el-form-item label="证件类型" prop="cartType">-->
-	            <!--<el-input v-model="createForm.cartType" placeholder="证件类型"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="证件号码" prop="cartNo">-->
-	            <!--<el-input v-model="createForm.cartNo" placeholder="证件号码"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="国籍" prop="nationality">-->
-	            <!--<el-input v-model="createForm.nationality" placeholder="国籍"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="生日" prop="birth">-->
-	            <!--<el-input v-model="createForm.birth" placeholder="生日"></el-input>-->
-	          <!--</el-form-item>-->
 	          <el-form-item label="性别" prop="sex">
 	            <!--<el-input v-model="createForm.sex" placeholder="性别"></el-input>-->
               <mySelect :model="createForm.sex" :groupCode="sexGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectSexHandler('createForm',$event)"></mySelect>
@@ -202,57 +112,6 @@
 	            <!--<el-input v-model="createForm.status" placeholder="状态"></el-input>-->
               <mySelect :model="createForm.status" :groupCode="statusGroupCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectStatusHandler('createForm',$event)"></mySelect>
             </el-form-item>
-	          <!--<el-form-item label="登录错误次数" prop="errorCount">-->
-	            <!--<el-input v-model="createForm.errorCount" placeholder="登录错误次数"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="登录IP" prop="loginIp">-->
-	            <!--<el-input v-model="createForm.loginIp" placeholder="登录IP"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="登录mac地址" prop="loginMac">-->
-	            <!--<el-input v-model="createForm.loginMac" placeholder="登录mac地址"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="创建时间" prop="createTime">-->
-	            <!--<el-input v-model="createForm.createTime" placeholder="创建时间"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="创建人id" prop="createId">-->
-	            <!--<el-input v-model="createForm.createId" placeholder="创建人id"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="创建人姓名" prop="createName">-->
-	            <!--<el-input v-model="createForm.createName" placeholder="创建人姓名"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改时间" prop="updateTime">-->
-	            <!--<el-input v-model="createForm.updateTime" placeholder="修改时间"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改人id" prop="updateId">-->
-	            <!--<el-input v-model="createForm.updateId" placeholder="修改人id"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="修改人姓名" prop="updateName">-->
-	            <!--<el-input v-model="createForm.updateName" placeholder="修改人姓名"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="账号类型" prop="accountType">-->
-	            <!--<el-input v-model="createForm.accountType" placeholder="账号类型"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="备注" prop="remark">-->
-	            <!--<el-input v-model="createForm.remark" placeholder="备注"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展" prop="reserve">-->
-	            <!--<el-input v-model="createForm.reserve" placeholder="扩展"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展1" prop="reserve1">-->
-	            <!--<el-input v-model="createForm.reserve1" placeholder="扩展1"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展2" prop="reserve2">-->
-	            <!--<el-input v-model="createForm.reserve2" placeholder="扩展2"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展3" prop="reserve3">-->
-	            <!--<el-input v-model="createForm.reserve3" placeholder="扩展3"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展4" prop="reserve4">-->
-	            <!--<el-input v-model="createForm.reserve4" placeholder="扩展4"></el-input>-->
-	          <!--</el-form-item>-->
-	          <!--<el-form-item label="扩展5" prop="reserve5">-->
-	            <!--<el-input v-model="createForm.reserve5" placeholder="扩展5"></el-input>-->
-	          <!--</el-form-item>-->
           </el-form>
           <div slot="footer" class="dialog-footer">
             <!--<el-button @click="dialogFormVisible = false">取 消</el-button>-->
@@ -312,12 +171,10 @@
       },
       // 获取子组件mySelect的值
       changeSelectSexHandler(formName,e){
-        console.log(formName)
-        console.log(e)
-        this.$refs[formName].sex = e
+        this.$refs[formName].model.sex = e
       },
       changeSelectStatusHandler(formName,e){
-        this.$refs[formName].status = e
+        this.$refs[formName].model.status = e
       },
       searchSubmit() {
         let param = {}

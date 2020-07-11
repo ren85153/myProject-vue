@@ -209,54 +209,54 @@ SysMenuTable.rules =  {
 	  parentId: [
 	    { required: true, message: '父级id', trigger: 'blur' },
 	  ],
-	  menuIcon: [
-	    { required: true, message: '菜单图标', trigger: 'blur' },
-	  ],
-	  menuOrder: [
-	    { required: true, message: '菜单顺序', trigger: 'blur' },
-	  ],
-	  status: [
-	    { required: true, message: '状态', trigger: 'blur' },
-	  ],
-	  createTime: [
-	    { required: true, message: '创建时间', trigger: 'blur' },
-	  ],
-	  createId: [
-	    { required: true, message: '创建人id', trigger: 'blur' },
-	  ],
-	  createName: [
-	    { required: true, message: '创建人姓名', trigger: 'blur' },
-	  ],
-	  updateTime: [
-	    { required: true, message: '修改时间', trigger: 'blur' },
-	  ],
-	  updateId: [
-	    { required: true, message: '修改人id', trigger: 'blur' },
-	  ],
-	  updateName: [
-	    { required: true, message: '修改人姓名', trigger: 'blur' },
-	  ],
-	  remark: [
-	    { required: true, message: '备注', trigger: 'blur' },
-	  ],
-	  reserve: [
-	    { required: true, message: '扩展', trigger: 'blur' },
-	  ],
-	  reserve1: [
-	    { required: true, message: '扩展1', trigger: 'blur' },
-	  ],
-	  reserve2: [
-	    { required: true, message: '扩展2', trigger: 'blur' },
-	  ],
-	  reserve3: [
-	    { required: true, message: '扩展3', trigger: 'blur' },
-	  ],
-	  reserve4: [
-	    { required: true, message: '扩展4', trigger: 'blur' },
-	  ],
-	  reserve5: [
-	    { required: true, message: '扩展5', trigger: 'blur' },
-	  ],
+	  // menuIcon: [
+	  //   { required: true, message: '菜单图标', trigger: 'blur' },
+	  // ],
+	  // menuOrder: [
+	  //   { required: true, message: '菜单顺序', trigger: 'blur' },
+	  // ],
+	  // status: [
+	  //   { required: true, message: '状态', trigger: 'blur' },
+	  // ],
+	  // createTime: [
+	  //   { required: true, message: '创建时间', trigger: 'blur' },
+	  // ],
+	  // createId: [
+	  //   { required: true, message: '创建人id', trigger: 'blur' },
+	  // ],
+	  // createName: [
+	  //   { required: true, message: '创建人姓名', trigger: 'blur' },
+	  // ],
+	  // updateTime: [
+	  //   { required: true, message: '修改时间', trigger: 'blur' },
+	  // ],
+	  // updateId: [
+	  //   { required: true, message: '修改人id', trigger: 'blur' },
+	  // ],
+	  // updateName: [
+	  //   { required: true, message: '修改人姓名', trigger: 'blur' },
+	  // ],
+	  // remark: [
+	  //   { required: true, message: '备注', trigger: 'blur' },
+	  // ],
+	  // reserve: [
+	  //   { required: true, message: '扩展', trigger: 'blur' },
+	  // ],
+	  // reserve1: [
+	  //   { required: true, message: '扩展1', trigger: 'blur' },
+	  // ],
+	  // reserve2: [
+	  //   { required: true, message: '扩展2', trigger: 'blur' },
+	  // ],
+	  // reserve3: [
+	  //   { required: true, message: '扩展3', trigger: 'blur' },
+	  // ],
+	  // reserve4: [
+	  //   { required: true, message: '扩展4', trigger: 'blur' },
+	  // ],
+	  // reserve5: [
+	  //   { required: true, message: '扩展5', trigger: 'blur' },
+	  // ],
 }
 
 

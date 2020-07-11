@@ -37,8 +37,11 @@
       },
       watch: {
         model:function(newVal,oldVal){
-          // this.selectValue = newVal
-          // console.log('newVal='+newVal+','+'oldVa='+oldVal);
+          if(newVal !== oldVal){
+            this.selectValue = this.model
+            // console.log('newVal=' + newVal + ', oldVal=' + oldVal + ',this.model=' + this.model +',selectValue=' + this.selectValue)
+            // this.getOptions()
+          }
         }
       },
       data() {
@@ -55,51 +58,51 @@
 
       },
       created(){
-        let dict = JSON.parse(localStorage.getItem('sysDict'))
-        let param = {}
-        let t = {}
-        t.groupCode = this.selectGroupCode
-        param.t = t
-        // console.log(this.selectGroupCode)
-        if(this.selectGroupCode =undefined || this.selectGroupCode ===''){
-          this.statusOptions = []
-          return
-        }
-        // console.log(param)
-        SysDictAxios.list(param).then(res => {
-          // debugger
-          if (res.data.data.length > 0 ) {
-            let selectDict = res.data.data
-            // console.log(selectDict)
-            let arr = []
-            for (let i = 0; i < selectDict.length; i++) {
-              // console.log(selectDict[i].dictCode)
-              if( this.ignoreCodes!=='' && (this.ignoreCodes.indexOf(selectDict[i].dictCode) > -1)){
-                continue
-              }else{
-                let option = {}
-                option.groupCode = selectDict[i].groupCode
-                option.label = selectDict[i].dictName
-                option.value = selectDict[i].dictCode
-                arr.push(option)
-                // this.statusOptions.push(option)
-              }
-            }
-            // this.statusOptions = arr
-            this.statusOptions = JSON.parse(JSON.stringify(arr))
-          }else{
-            this.statusOptions = []
-          }
-        })
+        this.getOptions()
       },
       methods: {
         getOptions(){
-
+          let param = {}
+          let t = {}
+          t.groupCode = this.selectGroupCode
+          param.t = t
+          // console.log(this.selectGroupCode)
+          if(this.selectGroupCode =undefined || this.selectGroupCode ===''){
+            this.statusOptions = []
+            return
+          }
+          // console.log(param)
+          SysDictAxios.list(param).then(res => {
+            // debugger
+            if (res.data.data.length > 0 ) {
+              let selectDict = res.data.data
+              // console.log(selectDict)
+              let arr = []
+              for (let i = 0; i < selectDict.length; i++) {
+                // console.log(selectDict[i].dictCode)
+                if( this.ignoreCodes!=='' && (this.ignoreCodes.indexOf(selectDict[i].dictCode) > -1)){
+                  continue
+                }else{
+                  let option = {}
+                  option.groupCode = selectDict[i].groupCode
+                  option.label = selectDict[i].dictName
+                  option.value = selectDict[i].dictCode
+                  arr.push(option)
+                  // this.statusOptions.push(option)
+                }
+              }
+              // this.statusOptions = arr
+              this.statusOptions = JSON.parse(JSON.stringify(arr))
+            }else{
+              this.statusOptions = []
+            }
+          })
         },
         changeSelectHandler(){
           // console.log('changeHandler' + this.selectValue)
           this.$emit('changeSelectHandler',this.selectValue)
-        }
+        },
+
       }
     }
 </script>
