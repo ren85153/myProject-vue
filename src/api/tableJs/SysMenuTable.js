@@ -18,6 +18,9 @@ SysMenuTable.column  = [
 	  	label: "菜单类型",
 	  	prop: "menuType",
 	  	operate: false,
+      formatter: function(row, column, cellValue, index){
+        return getDictName(column.property, cellValue)
+      }
 	  },
 
 	  {
@@ -206,9 +209,9 @@ SysMenuTable.rules =  {
 	  menuUrl: [
 	    { required: true, message: '菜单路径', trigger: 'blur' },
 	  ],
-	  parentId: [
-	    { required: true, message: '父级id', trigger: 'blur' },
-	  ],
+	  // parentId: [
+	  //   { required: true, message: '父级id', trigger: 'blur' },
+	  // ],
 	  // menuIcon: [
 	  //   { required: true, message: '菜单图标', trigger: 'blur' },
 	  // ],

@@ -65,6 +65,7 @@
       handleCommand(command) {
         if(command == 'loginout'){
           localStorage.removeItem('ms_username')
+          localStorage.removeItem('sysDict')
           this.$router.push('/login');
         }
       },

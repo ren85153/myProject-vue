@@ -14,7 +14,8 @@
             <el-input v-model="searchForm.menuName" placeholder="菜单名称"></el-input>
           </el-form-item>
           <el-form-item label="菜单类型">
-            <el-input v-model="searchForm.menuType" placeholder="菜单类型"></el-input>
+            <!--<el-input v-model="searchForm.menuType" placeholder="菜单类型"></el-input>-->
+            <mySelect :model="searchForm.menuType" :groupCode="menuTypeCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectTypeHandler('searchForm',$event)"></mySelect>
           </el-form-item>
           <el-form-item label="菜单等级">
             <el-input v-model="searchForm.menuLevel" placeholder="菜单等级"></el-input>
@@ -61,7 +62,7 @@
               <!-- 对应slot name -->
             </template>
           </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" fixed="right" width="200">
             <template slot-scope="scope">
               <el-button
                 size="mini"
@@ -94,7 +95,8 @@
 	            <el-input v-model="createForm.menuName" placeholder="菜单名称"></el-input>
 	          </el-form-item>
 	          <el-form-item label="菜单类型" prop="menuType">
-	            <el-input v-model="createForm.menuType" placeholder="菜单类型"></el-input>
+              <mySelect :model="createForm.menuType" :groupCode="menuTypeCode" :ignoreCodes="['3']" @changeSelectHandler="changeSelectTypeHandler('createForm',$event)"></mySelect>
+              <!--<el-input v-model="createForm.menuType" placeholder="菜单类型"></el-input>-->
 	          </el-form-item>
 	          <el-form-item label="菜单等级" prop="menuLevel">
 	            <el-input v-model="createForm.menuLevel" placeholder="菜单等级"></el-input>
@@ -102,9 +104,9 @@
 	          <el-form-item label="菜单路径" prop="menuUrl">
 	            <el-input v-model="createForm.menuUrl" placeholder="菜单路径"></el-input>
 	          </el-form-item>
-	          <el-form-item label="父级id" prop="parentId">
-	            <el-input v-model="createForm.parentId" placeholder="父级id"></el-input>
-	          </el-form-item>
+	          <!--<el-form-item label="父级id" prop="parentId">-->
+	            <!--<el-input v-model="createForm.parentId" placeholder="父级id"></el-input>-->
+	          <!--</el-form-item>-->
 	          <el-form-item label="菜单图标" prop="menuIcon">
 	            <el-input v-model="createForm.menuIcon" placeholder="菜单图标"></el-input>
 	          </el-form-item>
@@ -142,6 +144,7 @@
       return {
         tableData: SysMenuTable.tableData,
         searchForm: SysMenuTable.searchForm,
+        menuTypeCode:'menuType',
         groupCode:'status',
         dialogFormVisible: false,
         dialogTitle:'',
@@ -151,7 +154,7 @@
         rules: SysMenuTable.rules,
         title: SysMenuTable.column,
         total:100,//默认数据总数
-        pagesize:5,//每页的数据条数
+        pagesize:10,//每页的数据条数
         currentPage:1,//默认开始页面
       }
     },
@@ -163,6 +166,8 @@
     },
     created(){
       let param = {}
+      param.currentPage = this.currentPage
+      param.pageSize = this.pagesize
       this.getListByPageParam(param);
     },
     methods: {
@@ -171,16 +176,20 @@
         this.submitType = 'add'
         this.createForm = this.clearForm(this.createForm);
       },
+      changeSelectTypeHandler(formName,e){
+        // console.log(this.$refs[formName])
+        this.$refs[formName].model.menuType = e
+      },
       // 获取子组件mySelect的值
       changeSelectStatusHandler(formName,e){
-        console.log(this.$refs[formName])
+        // console.log(this.$refs[formName])
         this.$refs[formName].model.status = e
       },
       searchSubmit() {
         let param = {}
         param.t = this.searchForm
-        param.current = this.currentPage
-        param.size = this.pagesize
+        param.currentPage = this.currentPage
+        param.pageSize = this.pagesize
         this.getListByPageParam(param);
       },
       indexMethod()  {  },
@@ -188,19 +197,21 @@
         // console.log(`每页 ${val} 条`);
         let param = {}
         param.t = this.searchForm
-        param.current = this.currentPage
-        param.size = this.val
+        param.currentPage = this.currentPage
+        param.pageSize = val
         this.getListByPageParam(param);
       },
       handleCurrentChange(val) {
         // console.log(`当前页: ${val}`);
         let param = {}
         param.t = this.searchForm
-        param.current = this.val
-        param.size = this.pagesize
+        param.currentPage = val
+        param.pageSize = this.pagesize
+        console.log(param)
         this.getListByPageParam(param);
       },
       getListByPageParam(param){
+        // console.log(param);
         SysMenuAxios.page(param).then(res => {
           // console.log(res.data);
           if (res.data.code != '-1') {
@@ -219,8 +230,8 @@
       reflushTable(){
         let param = {}
         param.t = this.searchForm
-        param.current = this.currentPage
-        param.size = this.pagesize
+        param.currentPage = this.currentPage
+        param.pageSize = this.pagesize
         this.getListByPageParam(param);
       },
       submitForm(formName,submitType) {

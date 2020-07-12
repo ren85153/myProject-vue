@@ -28,7 +28,7 @@
           <el-form-item>
             <el-button type="primary" @click="searchSubmit">查询</el-button>
           </el-form-item>
-		</el-form>
+		    </el-form>
       </div>
       <!-- 新增 -->
       <div>
@@ -61,7 +61,7 @@
               <!-- 对应slot name -->
             </template>
           </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" fixed="right" width="200">
             <template slot-scope="scope">
               <el-button
                 size="mini"
@@ -148,7 +148,7 @@
         rules: SysDictTable.rules,
         title: SysDictTable.column,
         total:100,//默认数据总数
-        pagesize:5,//每页的数据条数
+        pagesize:10,//每页的数据条数
         currentPage:1,//默认开始页面
       }
     },
@@ -160,6 +160,8 @@
     },
     created(){
       let param = {}
+      param.currentPage = this.currentPage
+      param.pageSize = this.pagesize
       this.getListByPageParam(param);
     },
     methods: {
@@ -176,8 +178,8 @@
       searchSubmit() {
         let param = {}
         param.t = this.searchForm
-        param.current = this.currentPage
-        param.size = this.pagesize
+        param.currentPage = this.currentPage
+        param.pageSize = this.pagesize
         this.getListByPageParam(param);
       },
       indexMethod()  {  },
@@ -185,16 +187,16 @@
         // console.log(`每页 ${val} 条`);
         let param = {}
         param.t = this.searchForm
-        param.current = this.currentPage
-        param.size = val
+        param.currentPage = this.currentPage
+        param.pageSize = val
         this.getListByPageParam(param);
       },
       handleCurrentChange(val) {
         // console.log(`当前页: ${val}`);
         let param = {}
         param.t = this.searchForm
-        param.current = val
-        param.size = this.pagesize
+        param.currentPage = val
+        param.pageSize = this.pagesize
         this.getListByPageParam(param);
       },
       getListByPageParam(param){
@@ -217,8 +219,8 @@
       reflushTable(){
         let param = {}
         param.sysUser = this.searchForm
-        param.current = this.currentPage
-        param.size = this.pagesize
+        param.currentPage = this.currentPage
+        param.pageSize = this.pagesize
         this.getListByPageParam(param);
       },
       submitForm(formName,submitType) {

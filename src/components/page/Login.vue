@@ -49,6 +49,8 @@
       if(!dict){
         SysDictAxios.list(param).then(res => {
           if (res.data.data.length > 0 ) {
+            console.log('字典')
+            console.log(res.data.data)
             localStorage.setItem('sysDict', JSON.stringify(res.data.data))
           }
         })
