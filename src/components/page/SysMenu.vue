@@ -9,7 +9,7 @@
     <div class="container">
       <!-- 查询表单 -->
       <div>
-        <el-form :inline="true" :model="searchForm" class="demo-form-inline">
+        <el-form :inline="true" :model="searchForm" ref="searchForm"  class="demo-form-inline">
           <el-form-item label="菜单名称">
             <el-input v-model="searchForm.menuName" placeholder="菜单名称"></el-input>
           </el-form-item>
